@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Funlam.Models.Docentes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreDocente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoDocente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreDocente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApellidoDocente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdDocente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdDocente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdDocente })
+        </td>
+    </tr>
+}
+
+</table>
